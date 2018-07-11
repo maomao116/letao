@@ -60,4 +60,8 @@ $(function(){
       }
     })
   })
+  $('[type="reset"]').on('click',function () {
+    // console.log(1);
+    $('form').data('bootstrapValidator').resetForm(true);
+  })
 })
