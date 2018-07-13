@@ -13,7 +13,7 @@ $(function(){
   })
   //点击 退出登录
   $('.top_right').on("click",function(){
-    $(".modal").modal("show");
+    $(".loginOutModal").modal("show");
   })
   $('#exit').on('click',function(){
     $.ajax({

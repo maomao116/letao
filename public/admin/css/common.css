@@ -124,11 +124,18 @@ a:active {
   padding: 0 20px 0 20px ;
 }
 .lt_main {
-  width: 100%;
   padding: 70px 20px 0 200px;
   height: 100%;
   transition: all 1s;
 }
 .lt_main.now {
   padding: 70px 20px 0 20px;
+}
+.table.table-bordered thead td {
+  text-align: center;
+  vertical-align: middle;
+}
+.table.table-bordered tbody td {
+  text-align: center;
+  vertical-align: middle;
 }
