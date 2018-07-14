@@ -34,13 +34,13 @@
             <span class='glyphicon glyphicon-list'></span>
             分类管理
           </a>
-          <div class="son ">
+          <div class="son">
             <a href="cate1.html">一级分类</a>
-            <a href="cate2.html">二级分类</a>
+            <a href="cate2.html" >二级分类</a>
           </div>
         </li>
-        <li class='nav_active'>
-          <a href="goods.html ">
+        <li>
+          <a href="goods.html" class='nav_active'>
             <span class='glyphicon glyphicon-tags'></span>
             商品管理
           </a>
@@ -62,8 +62,28 @@
       <li>
         <a href="#">管理系统</a>
       </li>
-      <li class="active">商品管理</li>
+      <li class='active'>二级分类</li>
     </ol>
+    <div class="content">
+      <button class='btn btn-default btn-add mb_20'>添加分类</button>
+      <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <td width='10%'>序号</td>
+            <td width='30%'>一级分类名称</td>
+            <td width='30%'>二级分类名称</td>
+            <td width='30%'>二级分类LOGO</td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 挖个坑 -->
+        </tbody>
+      </table>
+      <!-- 分页 -->
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
+    </div>
   </div>
   <!-- 模态框-->
   <div class="modal fade loginOutModal" tabindex="-1">
@@ -86,12 +106,80 @@
       </div>
     </div>
   </div>
+  <div class="modal fade cate2Modal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <form>
+          <div class="modal-body ">
+            <div class="dropdown form-group">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                <span class='dropdown-text'>请选择一级分类</span>
+                <span class="caret"></span>
+              <input type="hidden" name="categoryId">
+                
+              </button>
+              <ul class="dropdown-menu">
+                <!-- 再挖个坑 -->
+              </ul>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='brandName' placeholder="请输入新的分类名">
+            </div>
+            <div class="form-group">
+              <label for="file" class='btn btn-default '>上传图片</label>
+              <input id='file' name='pic1' data-url='/category/addSecondCategoryPic' type="file" style='display:none;'>
+            </div>
+            <div class="form-group">
+              <img class='brandImg' width='100' height='100' src="./images/none.png" alt="">
+              <input type="hidden" name='brandLogo'>
+              <input type="hidden" name="hot" value="1">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary" id="add">添加</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- 模板1 -->
+  <script type='text/html' id='tpl'>
+    {{each rows v i}}
+    <tr>
+      <td>{{ (page-1)*size+i+1}}</td>
+      <td>{{ v.categoryName }}</td>
+      <td>{{ v.brandName }}</td>
+      <td>
+        <img src="{{ v.brandLogo }}" width='50' height='50' alt="">
+      </td>
+    </tr>
+    {{/each}}
+  </script>
 
+  <script type='text/html' id='tpl2'>
+    {{each rows v i}}
+    <li>
+      <a href="#" data-id='{{v.id}}'>{{ v.categoryName }}</a>
+    </li>
+    {{/each}}
+  </script>
   <script src="./lib/jquery/jquery.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.js"></script>
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>  
+  <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/goods.js"></script>
 </body>
 
 </html>
