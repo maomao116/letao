@@ -36,7 +36,7 @@
           </a>
           <div class="son">
             <a href="cate1.html">一级分类</a>
-            <a href="cate2.html" >二级分类</a>
+            <a href="cate2.html">二级分类</a>
           </div>
         </li>
         <li>
@@ -70,9 +70,12 @@
         <thead>
           <tr>
             <td width='10%'>序号</td>
-            <td width='30%'>一级分类名称</td>
-            <td width='30%'>二级分类名称</td>
-            <td width='30%'>二级分类LOGO</td>
+            <td width='25%'>商品名称</td>
+            <td width='25%'>商品描述</td>
+            <td width='10%'>商品库存</td>
+            <td width='10%'>商品尺寸</td>
+            <td width='10%'>商品状态</td>
+            <td width='10%'>操作</td>
           </tr>
         </thead>
         <tbody>
@@ -106,39 +109,55 @@
       </div>
     </div>
   </div>
-  <div class="modal fade cate2Modal" tabindex="-1">
-    <div class="modal-dialog modal-sm">
+  <div class="modal fade goodsModal" tabindex="-1">
+    <div class="modal-dialog ">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title">添加分类</h4>
+          <h4 class="modal-title">添加商品</h4>
         </div>
         <form>
           <div class="modal-body ">
             <div class="dropdown form-group">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                <span class='dropdown-text'>请选择一级分类</span>
+                <span class='dropdown-text'>请选择二级分类</span>
                 <span class="caret"></span>
-              <input type="hidden" name="categoryId">
-                
+                <input type="hidden" name="brandId">
               </button>
               <ul class="dropdown-menu">
                 <!-- 再挖个坑 -->
               </ul>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name='brandName' placeholder="请输入新的分类名">
+              <input type="text" class="form-control" name='proName' placeholder="请输入商品名称">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="3" name='proDesc' placeholder="请输入商品描述"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='num' placeholder="请输入商品库存">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='size' placeholder="请输入商品尺码(32-46)">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='oldPrice' placeholder="请输入商品原价">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='price' placeholder="请输入商品现价">
             </div>
             <div class="form-group">
               <label for="file" class='btn btn-default '>上传图片</label>
-              <input id='file' name='pic1' data-url='/category/addSecondCategoryPic' type="file" style='display:none;'>
+              <input id='file' name='pic1' multiple data-url='/product/addProductPic' type="file" style='display:none;'>
             </div>
             <div class="form-group">
-              <img class='brandImg' width='100' height='100' src="./images/none.png" alt="">
+              <div class="img_box">
+                <!-- <img src="" alt=""> -->
+              </div>
               <input type="hidden" name='brandLogo'>
-              <input type="hidden" name="hot" value="1">
+              <input type="hidden" name="status" value="1">
             </div>
           </div>
           <div class="modal-footer">
@@ -151,22 +170,25 @@
   </div>
   <!-- 模板1 -->
   <script type='text/html' id='tpl'>
-    {{each rows v i}}
+    {{ each rows v i }}
     <tr>
-      <td>{{ (page-1)*size+i+1}}</td>
-      <td>{{ v.categoryName }}</td>
-      <td>{{ v.brandName }}</td>
+      <td>{{ (page-1)*size+i+1 }}</td>
+      <td>{{ v.proName }}</td>
+      <td>{{ v.proDesc }}</td>
+      <td>{{ v.num }}</td>
+      <td>{{ v.size }}</td>
+      <td>上架</td>
       <td>
-        <img src="{{ v.brandLogo }}" width='50' height='50' alt="">
+        <button class='btn btn-danger btn-sm'>下架</button>
       </td>
     </tr>
-    {{/each}}
+    {{ /each }}
   </script>
 
   <script type='text/html' id='tpl2'>
     {{each rows v i}}
     <li>
-      <a href="#" data-id='{{v.id}}'>{{ v.categoryName }}</a>
+      <a href="#" data-id='{{v.id}}'>{{ v.brandName }}</a>
     </li>
     {{/each}}
   </script>
@@ -175,7 +197,7 @@
   <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
   <script src="./lib/artTemplate/template-web.js"></script>
-  <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>  
+  <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
   <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
   <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
   <script src="./js/common.js"></script>
