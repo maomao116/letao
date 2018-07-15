@@ -39,39 +39,7 @@
       <div class="main-left">
         <div class="mui-scroll-wrapper">
           <ul class=' mui-scroll mui-clearfix'>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
-            <li>
-              <a href="javascript:;">运动馆</a>
-            </li>
+            <!-- 挖个坑 -->
           </ul>
         </div>
       </div>
@@ -79,30 +47,7 @@
       <div class="main-right">
         <div class="mui-scroll-wrapper">
           <ul class=' mui-scroll mui-clearfix'>
-            <li>
-              <img src="/mobile/images/brand1.png" alt="">
-              <p>耐克</p>
-            </li>
-            <li>
-              <img src="/mobile/images/brand1.png" alt="">
-              <p>耐克</p>
-            </li>
-            <li>
-              <img src="/mobile/images/brand1.png" alt="">
-              <p>耐克</p>
-            </li>
-            <li>
-              <img src="/mobile/images/brand1.png" alt="">
-              <p>耐克</p>
-            </li>
-            <li>
-              <img src="/mobile/images/brand1.png" alt="">
-              <p>耐克</p>
-            </li>
-            <li>
-              <img src="/mobile/images/brand1.png" alt="">
-              <p>耐克</p>
-            </li>
+            <!-- 再挖个坑 -->
           </ul>
         </div>
 
@@ -136,7 +81,27 @@
         </ul>
       </div>
     </div>
+    <!-- 模板左 -->
+    <script id='tpl' type='text/html' >
+      {{each rows v i}}
+      <li data-id='{{ v.id }}' >
+        <a href="javascript:;">{{ v.categoryName }}</a>
+      </li>
+      {{/each}}
+    </script>
+    <!-- 模板右-->
+    <script id="tpl2" type='text/html'>
+      {{ each rows v i }}
+      <li>
+        <img src="{{ v.brandLogo }}" alt="">
+        <p>{{ v.brandName }}</p>
+      </li>
+      {{ /each }}
+    </script>
     <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src='./js/common.js'></script>
     <script src="./js/cate.js"></script>
 </body>
 
