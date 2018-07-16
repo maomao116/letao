@@ -1,0 +1,41 @@
+  .lt-main{
+    position: relative;
+    overflow: hidden;
+    .search{
+      padding:10px;
+      input{
+        height: 34px;
+        font-size: 14px;
+        position: relative;
+      }
+      button{
+        position: absolute;
+        right: 10px;
+        top:10px;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+    .content{
+      padding: 10px;
+      color:#666;      
+      .title{
+        font-size: 12px;
+      }
+      .list{
+        border: 1px dashed red;
+        li{
+          padding-left:10px;
+          border-bottom: 1px dashed red;          
+          height:30px;
+          line-height: 28px;
+          &:last-child{
+          border-bottom: none;
+          }
+          a{
+            font-size: 12px;
+           
+          }
+        }
+      }
+    }
+  }

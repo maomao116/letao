@@ -14,6 +14,7 @@ $(function () {
         console.log(info);
         
         $('.main-left ul').html(template('tpl', info));
+        $('.main-left li:first-child').addClass('active');
         
       }
     })
@@ -30,7 +31,7 @@ $(function () {
       },
       success: function (info) {
         console.log(info);
-         if (info.rows.length == 0) {
+         if (info.rows.length ==0) {
           $('.main-right ul').html('该分类下没有更多的品牌信息');
           return;
         }
@@ -46,4 +47,4 @@ $(function () {
     id=$(this).data('id');
     renderSecond(id);   
   })
-})
+}) 

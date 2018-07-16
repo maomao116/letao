@@ -26,7 +26,6 @@ img {
   z-index: 999;
 }
 .lt-header .h-left {
-  height: 100%;
   width: 45px;
   float: left;
   text-align: center;
@@ -55,6 +54,7 @@ img {
   text-align: center;
   font-weight: 400;
   margin: 0;
+  padding: 0;
 }
 .lt-footer {
   height: 55px;

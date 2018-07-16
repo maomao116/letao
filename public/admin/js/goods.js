@@ -206,10 +206,10 @@ $(function () {
           page = 1;
           render();
           $('form').data('bootstrapValidator').resetForm(true);
-          //手动修改非表单数据
+          手动修改非表单数据
           $('.dropdown-text').text('请选择二级分类');        
           $(".img_box").empty();
-          //重置imgs
+          重置imgs
           imgs=[];
         }
       }

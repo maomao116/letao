@@ -1,0 +1,40 @@
+.lt-main {
+  position: relative;
+  overflow: hidden;
+}
+.lt-main .search {
+  padding: 10px;
+}
+.lt-main .search input {
+  height: 34px;
+  font-size: 14px;
+  position: relative;
+}
+.lt-main .search button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0 3px 3px 0;
+}
+.lt-main .content {
+  padding: 10px;
+  color: #666;
+}
+.lt-main .content .title {
+  font-size: 12px;
+}
+.lt-main .content .list {
+  border: 1px dashed red;
+}
+.lt-main .content .list li {
+  padding-left: 10px;
+  border-bottom: 1px dashed red;
+  height: 30px;
+  line-height: 28px;
+}
+.lt-main .content .list li:last-child {
+  border-bottom: none;
+}
+.lt-main .content .list li a {
+  font-size: 12px;
+}
